@@ -1,0 +1,2 @@
+Import-Module activedirectory
+Get-ADGroupMember -Identity "grupo_ad" -Recursive | Get-ADObject -Properties name, mail, department | select name,mail,department | Export-Csv -path C:\CSV2\teste.csv -delimiter ";" -NoTypeInformation
