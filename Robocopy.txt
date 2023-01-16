@@ -1,0 +1,57 @@
+=====================
+===== ROBOCOPY ======
+=====================
+ECHO OFF
+
+ECHO "============ Iniciando Backup ============"
+
+ECHO "Copiando pasta BCG:"
+robocopy  E:\Private\BCG [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_BCG.log /TEE
+ECHO "BCG Finalizado."
+
+ECHO "Copiando pasta DCC:"
+robocopy  E:\DCC [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_DCC.log /TEE
+ECHO "DCC Finalizado."
+
+ECHO "Copiando pasta Fotos Empregados:"
+robocopy  "E:\Private\HR\Departamento Pessoal\FOTOS MICROSIGA\Fotos empregados [DESTINO]" /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_Fotos_Empregados.log /TEE
+ECHO "Fotos Empregados Finalizado."
+
+ECHO "Copiando pasta Private:"
+robocopy  E:\Private [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_Private.log /TEE
+ECHO "Private Finalizado."
+
+ECHO "Copiando pasta Public:"
+robocopy  E:\Public [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_Public.log /TEE
+ECHO "Public Finalizado."
+
+ECHO "Copiando pasta Reports:"
+robocopy  E:\Reports [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_Reports.log /TEE
+ECHO "Reports Finalizado."
+
+ECHO "Copiando pasta Temp:"
+robocopy  E:\temp [DESTINO] /E /ZB /COPYALL /R:0 /W:0 /V /SEC /NP /ETA /LOG:C:\robocopy_Temp.log /TEE
+ECHO "Temp Finalizado."
+---------------------
+
+/E - Copia sub-diretórios
+
+/ZB – Modo Backup
+
+/COPYALL – Cópia de todas as informações do arquivo
+
+/R:0 - não repete a cópia em caso de falha
+
+/W:0 - por não repetir a cópia em caso de falha também não há tempo de espera entre as repetições
+
+/SEC - Realiza a cópia também das permissões de segurança
+
+/V - Exibe os arquivos que por alguma razão não foram copiados
+
+/NP - Não exibe o progresso da cópia
+
+/ETA - Exibe o tempo estimado que a cópia dos dados levará
+
+/LOG: - Especifica o local onde o log será armazenado
+
+/TEE - permite acompanhar no prompt de comandos o andamento do todo o processo de cópia
