@@ -1,0 +1,3 @@
+Comando para consultar expiração e alteração de senha no AD 
+
+net user rebecca.lima (Nome de usuário) /domain
